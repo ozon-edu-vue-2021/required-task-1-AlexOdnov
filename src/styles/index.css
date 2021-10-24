@@ -71,6 +71,7 @@ main {
     column-count: 4;
     column-gap: 5px;
     min-height: 400px;
+    border-radius: 6px;
 }
 
 .link {
@@ -94,7 +95,29 @@ main {
 }
 
 /* Popup style */
+
+.popup {
+    position: fixed;
+    visibility: hidden;
+    display: flex;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(33, 33, 33, 0.5);
+}
+
+.popup.open {
+    visibility: visible;
+    overflow: auto;
+}
+
 .popup .content {
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 600px;
+    background-color: #fff;
     text-align: right;
     column-count: initial;
 }
@@ -114,25 +137,6 @@ figcaption {
     margin: 5px 0;
 }
 
-.content {
-    border-radius: 6px;
-}
-
-.popup {
-    position: fixed;
-    visibility: hidden;
-    display: flex;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(33, 33, 33, 0.5);
-}
-
-.popup.open {
-    visibility: visible;
-}
-
 .close {
     position: absolute;
     top: 50px;
@@ -144,16 +148,6 @@ figcaption {
     height: 40px;
     border-radius: 50%;
     padding: 0;
-}
-
-.popup .content {
-    width: 100%;
-    margin: auto;
-    box-sizing: border-box;
-    max-width: 600px;
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 20px;
 }
 
 .popup .link {
