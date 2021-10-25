@@ -9,7 +9,7 @@ body {
 img {
     width: 100%;
     max-width: 100%;
-    display: bloсk;
+    display: block;
 }
 
 a {
@@ -41,6 +41,7 @@ main {
     min-height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     padding: 50px;
     background-color: #fff;
@@ -70,9 +71,10 @@ main {
     column-count: 4;
     column-gap: 5px;
     min-height: 400px;
+    border-radius: 6px;
 }
 
-a {
+.link {
     display: inline-block;
     border-radius: 6px;
     overflow: hidden;
@@ -80,20 +82,43 @@ a {
     min-height: 100px;
 }
 
-a:nth-child(n) {
+.link:nth-child(n) {
     background-color: #EFEBE9;
 }
 
-a:nth-child(2n) {
+.link:nth-child(2n) {
     background-color: #D7CCC8;
 }
 
-a:nth-child(3n) {
+.link:nth-child(3n) {
     background-color: #BCAAA4;
 }
 
 /* Popup style */
+
+.popup {
+    position: fixed;
+    z-index: 2;
+    visibility: hidden;
+    display: flex;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(33, 33, 33, 0.5);
+}
+
+.popup.open {
+    visibility: visible;
+    overflow: auto;
+}
+
 .popup .content {
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 600px;
+    background-color: #fff;
     text-align: right;
     column-count: initial;
 }
@@ -113,27 +138,7 @@ figcaption {
     margin: 5px 0;
 }
 
-.content {
-    border-radius: 6px;
-}
-
-.popup {
-    position: fixed;
-    visibility: hidden;
-    display: flex;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(33, 33, 33, 0.5);
-    z-index: -1;
-}
-
-.popup.open {
-    visibility: visible;
-}
-
-.action {
+.close {
     position: absolute;
     top: 50px;
     right: 50px;
@@ -143,18 +148,10 @@ figcaption {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-}
-
-.popup .content {
-    width: 100%;
-    margin: auto;
-    box-sizing: border-box;
-    max-width: 600px;
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 20px;
+    padding: 0;
 }
 
 .popup .link {
     display: inline;
+    background-color: transparent;
 }

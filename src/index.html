@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broken page</title>
     <link rel="stylesheet" href="./styles/loader.css">
     <link rel="stylesheet" href="./styles/index.css">
-    <title>Broken page</title>
 </head>
 
 <body>
@@ -23,17 +23,20 @@
         </div>
         <button class="action fetch" data-page="2">Загрузить картинки</button>
         <section class="images content"></section>
-    </main>
     <div class="popup">
-        <button class="action close">&Cross;</button>
         <div class="content"></div>
+        <button class="action close">
+            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 2L26 26" stroke="currentColor" stroke-width="6"/>
+                <path d="M26 2L2 26" stroke="currentColor" stroke-width="6"/>
+            </svg>
+        </button>
     </div>
-
-    <script src="./scripts/index.js"></script>
+    </main>
 
     <template id="image">
         <a class="link" href="" data-id="">
-            <img src="" widht="250" alt=""></img>
+            <img src="" width="250" alt="">
         </a>
     </template>
 
@@ -45,9 +48,11 @@
                     Автор: <address class="author"></address>
                 </figcaption>
             </figure>
-            <a class="link open" href="" target="_blank">Открыть в полном размере</a>
+            <a class="link" href="" target="_blank">Открыть в полном размере</a>
         </div>
     </template>
+
+    <script defer src="./scripts/index.js"></script>
 </body>
 
 </html>
